@@ -36,3 +36,6 @@ Flutter based mobile app for students implementing data from FIDIT website. Crea
 
 ## Lokalizacija
 *	(opcionalno) Aplikacija je lokalizirana na engleskom I na hrvatskom jeziku te se u postavkama pomoću dropdown liste izabire željeni jezik. (+)
+
+## Dijeljenje (OPCIONALNO)
+*   Korisnik može izabrati dokument (npr. Dinp predmeta) te ga podijeliti pomoću aplikacije (npr. Gmail, viber...) drugim korisnicima (OPCIONALNO)
