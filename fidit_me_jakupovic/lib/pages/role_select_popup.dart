@@ -63,6 +63,7 @@ class RoleDialogState extends State<RoleDialog> {
       child: AlertDialog(
         title: Text(AppLocalizations.of(context)!.izaberiUlogu),
         content: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ...(definedRoles.definedRoleMap.keys)
                 .map((roleName) => RadioListTile<RoleSettings?>(

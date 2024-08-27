@@ -95,7 +95,7 @@
         "context": "Content",
         "description": "Sadržaj o viziji"
     },
-    "vrijednosti": "Vizija",
+    "vrijednosti": "Vrijednosti",
     "@vrijednosti": {
         "context": "Title",
         "description": "Naslov, about page"
@@ -113,5 +113,9 @@
     "adresa": "Radmile Matejčić 2, 51000 Rijeka, Republika Hrvatska",
     "@adresa": {
         "description": "Adress of establishment"
+    },
+    "navigacijskiGumb": "Navigiraj me ovdje",
+    "@navigacijskiGumb": {
+        "description": "Content shown on navigate me here button"
     }
 }
