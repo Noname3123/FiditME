@@ -32,7 +32,7 @@ Flutter based mobile app for students implementing data from FIDIT website. Crea
 
 ## Postavke
 *	U postavkama aplikacije će se moći definirati “light/dark mode” koji će promijeniti boje aplikacije na svijetlo ili tamno. Postavka se sprema te se učitava prilikom otvaranja aplikacije. “Light mode” je “Default” stanje aplikacije. (+)
-*	Sve postavke se automatski spremaju i primjenjuju čim korisnik promijeni opciju
+*	Sve postavke se automatski spremaju i primjenjuju čim korisnik promijeni opciju (+)
 
 ## Lokalizacija
 *	(opcionalno) Aplikacija je lokalizirana na engleskom I na hrvatskom jeziku te se u postavkama pomoću dropdown liste izabire željeni jezik. (+)
