@@ -4,7 +4,7 @@ Flutter based mobile app for students implementing data from FIDIT website. Crea
 # FUNCTIONALITIES
 
 *	Aplikacija predstavlja rekreaciju FIDIT službene stranice te ima implementirane stranice:
-    - O fakultetu (kratki sumirani opis FIDITA sa svih (pod)stranica te prikaz lokacije fidita na karti- implement Open Street Map, Ako postoje numeričke vrijednosti, pokaži ih sa “dashboard gauge”)
+    - O fakultetu (kratki sumirani opis FIDITA sa svih (pod)stranica te prikaz lokacije fidita na karti- implement Open Street Map, Ako postoje numeričke vrijednosti, pokaži ih sa “dashboard gauge”) (+)
     - Upisi – prikaz dokumenata sa upisa na preddiplomski, diplomski i više godine
     - Studiji – Preddiplomski, Diplomski
     - Izvedbeni program za prijediplomski I diplomski studij
@@ -12,8 +12,8 @@ Flutter based mobile app for students implementing data from FIDIT website. Crea
 
 ## Grupe
 *	Kada se aplikacija prvi put pokrene, pojavljuje se pop-up dijalog kojim korisnik definira kojoj grupi pripada: učenik, student preddiplomskog i student diplomskog. (+)
-*	Postavke grupe su spremljene nakon izbora te su automatski primjenjene nakon svakog učitavanja aplikacije
-*	Korisnik u bilo kojem trenutku može promijeniti svoju grupu u postavkama aplikacije
+*	Postavke grupe su spremljene nakon izbora te su automatski primjenjene nakon svakog učitavanja aplikacije (+)
+*	Korisnik u bilo kojem trenutku može promijeniti svoju grupu u postavkama aplikacije (+)
 *	Svi korisnici imaju pristup opciji “O fakultetu”, koja prikazuje (ukratko, sumirano), sve informacije o fakultetu
 ## Učenici 
 *	Učenici na stranici “Upisi” imaju pristup dokumentima koji opisuju postupak upisa na preddiplomski studij.
@@ -41,3 +41,6 @@ Flutter based mobile app for students implementing data from FIDIT website. Crea
 
 ## Dijeljenje (OPCIONALNO)
 *   Korisnik može izabrati dokument (npr. Dinp predmeta) te ga podijeliti pomoću aplikacije (npr. Gmail, viber...) drugim korisnicima (OPCIONALNO)
+
+*   Na stranici "O fakultetu", Korisnik ima pristup karti, na kojoj je prikazana lokacija fakulteta te može pokrenuti navigaciju na to mjesto. (+)
+*   Na stranici "O fakultetu" su prikazane kontakt informacije (email i broj telefona), dodirom odgovarajućih gumba, korisniku se na uređaju automatski otvaraju odgovarajuće aplikacije (klikom na e-mail se otvara aplikacija za slanje maila sa unesenim primateljem, klikom na broj telefona se otvara telefon s unesenim pozivnim brojem) (+)
