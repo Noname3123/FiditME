@@ -20,11 +20,6 @@ class SettingsPage extends StatefulWidget {
 class SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement settings
-    //TODO: implement language and role apps
-    //TODO: implement dark mode
-    //TODO: implement settings serialization
-
     return SettingsList(
       sections: [
         SettingsSection(
@@ -49,7 +44,8 @@ class SettingsPageState extends State<SettingsPage> {
             SettingsTile.switchTile(
               onToggle: (value) {
                 setState(() {
-                  widget.passedFunctionsList.updateDarkModeStatus!(value);
+                  widget.passedFunctionsList.updateDarkModeStatus!(value,
+                      shouldSave: true);
                 });
               }, //if function not null then call it
               initialValue: widget.passedFunctionsList.getDarkModeStatus!(),
@@ -64,7 +60,7 @@ class SettingsPageState extends State<SettingsPage> {
                           context: context,
                           getRole: widget.passedFunctionsList.getRole)
                       .getLocalizedRoleName(),
-                ), //TODO: make a mapper which converts roles from one lang to the other depending
+                ),
                 onPressed: (BuildContext context) {
                   showDialog(
                     context: context,

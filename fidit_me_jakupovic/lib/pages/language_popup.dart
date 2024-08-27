@@ -35,7 +35,7 @@ class LanguageDialogState extends State<LanguageDialog> {
         ));
     var applyBtn = TextButton(
         onPressed: () {
-          widget.passedFunctionList.setLocale!(selectedLang);
+          widget.passedFunctionList.setLocale!(selectedLang, shouldSave: true);
           Navigator.of(context).pop();
         },
         child: Text(

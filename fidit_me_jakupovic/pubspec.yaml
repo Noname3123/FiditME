@@ -39,6 +39,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  localstorage: ^5.0.0
+  
+  
 
 dev_dependencies:
   flutter_test:

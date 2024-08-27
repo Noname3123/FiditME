@@ -20,8 +20,7 @@ class RoleDialogState extends State<RoleDialog> {
 
   @override
   void initState() {
-    selectedRole = widget
-        .passedFunctionList.getRole!(); //TODO: create get role object function
+    selectedRole = widget.passedFunctionList.getRole!();
 
     super.initState();
   }
@@ -37,8 +36,7 @@ class RoleDialogState extends State<RoleDialog> {
         ));
     var applyBtn = TextButton(
         onPressed: () {
-          widget.passedFunctionList.setRole!(
-              selectedRole); //TODO: create change role object function
+          widget.passedFunctionList.setRole!(selectedRole, shouldSave: true);
 
           Navigator.of(context).pop();
         },

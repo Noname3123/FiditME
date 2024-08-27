@@ -9,7 +9,7 @@ class RoleToLocalizedNameMapper {
   BuildContext context;
   Function? getRole;
 
-  ///This method returns a String Corresponding to the name of the active role or returns null
+  ///This method returns a String Corresponding to the name of the active role or returns default role ("Student"/"Učenik" in hr)
   String getLocalizedRoleName() {
     var roleToLocalizedNameMap = {
       "Student": AppLocalizations.of(context)!.ulogaUcenik,
@@ -33,7 +33,7 @@ class RoleToLocalizedNameMapper {
     return localizedName;
   }
 
-  ///This method returns a String Corresponding to the role key (String type), passed as param
+  ///This method returns a localised String name of role Corresponding to the role key (of String type), passed as param
   String getLocalizedRoleNameByKey(String key) {
     var roleToLocalizedNameMap = {
       "Student": AppLocalizations.of(context)!.ulogaUcenik,
