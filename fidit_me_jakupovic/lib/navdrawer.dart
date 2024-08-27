@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 ///this class inits the sidebar used for navigation.
 class NavDrawer extends StatelessWidget {
@@ -25,33 +26,33 @@ class NavDrawer extends StatelessWidget {
       children: [
         ListTile(
             leading: const Icon(Icons.info),
-            title: const Text("O fakultetu"),
+            title: Text(AppLocalizations.of(context)!.oFakultetu),
             onTap: () {
               rerouteAndCloseDrawer(context, 0);
             }),
         ListTile(
           leading: const Icon(Icons.edit),
-          title: const Text("Upisi"),
+          title: Text(AppLocalizations.of(context)!.upisi),
           onTap: () {
             rerouteAndCloseDrawer(context, 1);
           },
         ),
         ListTile(
             leading: const Icon(Icons.school),
-            title: const Text("Studiji"),
+            title: Text(AppLocalizations.of(context)!.studiji),
             onTap: () {
               rerouteAndCloseDrawer(context, 2);
             }),
         ListTile(
             leading: const Icon(Icons.description),
-            title: const Text("Izvedbeni planovi"),
+            title: Text(AppLocalizations.of(context)!.dinpPlanovi),
             onTap: () {
               rerouteAndCloseDrawer(context, 3);
             }),
         const Divider(),
         ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text("Postavke"),
+            title: Text(AppLocalizations.of(context)!.postavke),
             onTap: () {
               rerouteAndCloseDrawer(context, 4);
             }),

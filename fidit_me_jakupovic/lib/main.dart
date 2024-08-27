@@ -1,8 +1,15 @@
 import 'package:fidit_me_jakupovic/mainpageframe.dart';
 import 'package:fidit_me_jakupovic/models/functionslist.dart';
+import 'package:fidit_me_jakupovic/models/settings_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:fidit_me_jakupovic/models/role_settings.dart';
+import 'package:localstorage/localstorage.dart';
+import 'package:fidit_me_jakupovic/models/definedroles.dart' as definedRoles;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //necessarry for localstore DB
+  await initLocalStorage();
   runApp(MainApp());
 }
 
@@ -10,9 +17,11 @@ class MainApp extends StatefulWidget {
   MainApp({super.key});
 
   // This widget is the root of your application.
+  //defined color scheme of app for light mode
   final ColorScheme colorSchemeLight =
       ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 23, 55, 83));
 
+  //defined color scheme dark mode
   final ColorScheme colorSchemeDark = ColorScheme.fromSeed(
       seedColor: const Color.fromARGB(255, 23, 55, 83),
       brightness: Brightness.dark);
@@ -21,12 +30,29 @@ class MainApp extends StatefulWidget {
 }
 
 class MainAppState extends State<MainApp> {
-  var currentThemeMode =
-      ThemeMode.light; //TODO: update theme mode to the one saved on phone
+  var currentThemeMode = ThemeMode.light;
+  var currentLocale = const Locale('en');
+  RoleSettings?
+      currentRole; //TODO: remain set as null in final - since load/save system would overload these intro settings. If it is null, then the dialog would open
+
+  @override
+  void initState() {
+    //load saved data
+    updateDarkModeStatus(
+        bool.parse(localStorage.getItem("darkMode") ?? "false"));
+    setLocale(localStorage.getItem("currentLanguageName") ?? "en");
+    setRole(definedRoles.definedRoleMap[localStorage.getItem("roleKey")]);
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FIDITme',
+      locale: currentLocale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         // This is the theme of your application.
         colorScheme: widget.colorSchemeLight,
@@ -68,16 +94,28 @@ class MainAppState extends State<MainApp> {
       home: MainPageFrame(
         title: 'FIDITme',
         passedFunctionsList: FunctionsList(
-            getDarkModeStatus: getDarkModeStatus,
-            updateDarkModeStatus: updateDarkModeStatus),
+          getDarkModeStatus: getDarkModeStatus,
+          updateDarkModeStatus: updateDarkModeStatus,
+          getLocale: getLocale,
+          setLocale: setLocale,
+          getRole: getRole,
+          setRole: setRole,
+        ),
       ),
     );
   }
 
-  ///this method updates dark mode color scheme according to values passed to param value
-  void updateDarkModeStatus(bool value) {
+  ///this method updates dark mode color scheme according to values passed to param value. Additional param shouldSave (by default on false) defines whether value change should cause the new state to save. If true, it will save the new config to local storage.
+  void updateDarkModeStatus(bool value, {bool shouldSave = false}) {
     setState(() {
       currentThemeMode = value ? ThemeMode.dark : ThemeMode.light;
+      if (shouldSave) {
+        SettingsData(
+          currentLanguageName: currentLocale.languageCode,
+          darkMode: getDarkModeStatus(),
+          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+        ).saveSettings();
+      }
     });
   }
 
@@ -87,5 +125,43 @@ class MainAppState extends State<MainApp> {
       return true;
     }
     return false;
+  }
+
+  ///this method takes a two character language code (String) and loads in a new locale for the app.  Additional param shouldSave (by default on false) defines whether value change should cause the new state to save. If true, it will save the new config to local storage.
+  void setLocale(String langCode, {bool shouldSave = false}) {
+    setState(() {
+      currentLocale = Locale(langCode);
+      if (shouldSave) {
+        SettingsData(
+          currentLanguageName: langCode,
+          darkMode: getDarkModeStatus(),
+          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+        ).saveSettings(); //Perform setting save when the locale/ role/ dark mode changes
+      }
+    });
+  }
+
+  ///getter for the current locale of the app. Return Locale object
+  Locale getLocale() {
+    return currentLocale;
+  }
+
+  ///this method takes a role Setting and updates the currentRole field.  Additional param shouldSave (by default on false) defines whether value change should cause the new state to save. If true, it will save the new config to local storage.
+  void setRole(RoleSettings? role, {bool shouldSave = false}) {
+    setState(() {
+      currentRole = role;
+      if (shouldSave) {
+        SettingsData(
+          currentLanguageName: currentLocale.languageCode,
+          darkMode: getDarkModeStatus(),
+          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+        ).saveSettings();
+      }
+    });
+  }
+
+  ///getter for the current role of the app. Returns RoleSettings object
+  RoleSettings? getRole() {
+    return currentRole;
   }
 }

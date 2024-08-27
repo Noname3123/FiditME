@@ -1,0 +1,18 @@
+{
+    "@@locale": "en",
+    "oFakultetu": "About the Faculty",
+    "upisi": "Enrollments",
+    "studiji": "Studies",
+    "dinpPlanovi": "Implementation plans",
+    "postavke": "Settings",
+    "jezik": "Language",
+    "darkMode": "Dark Mode",
+    "uloga": "Role",
+    "ulogaUcenik": "Student",
+    "ulogaStudentPredd": "Undergraduate Student",
+    "ulogaStudentDipl": "Graduate Student",
+    "izaberiJezik": "Select language",
+    "primijeni": "Apply",
+    "odustani": "Cancel",
+    "izaberiUlogu": "Select role"
+}

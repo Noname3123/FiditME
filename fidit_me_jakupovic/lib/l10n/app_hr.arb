@@ -1,0 +1,78 @@
+{
+    "@@locale": "hr",
+    "oFakultetu": "O fakultetu",
+    "@oFakultetu": {
+        "description": "Naslov stranice o fakultetu",
+        "context": "NavBar"
+    },
+    "upisi": "Upisi",
+    "@upisi": {
+        "description": "stranica upisi",
+        "context": "NavBar"
+    },
+    "studiji": "Studiji",
+    "@studiji": {
+        "description": "Upis u studije",
+        "context": "NavBar"
+    },
+    "dinpPlanovi": "Izvedbeni planovi",
+    "@dinpPlanovi": {
+        "context": "NavBar",
+        "description": "Stranica s izvedbenim planovima"
+    },
+    "postavke": "Postavke",
+    "@postavke": {
+        "context": "Navbar and page content",
+        "description": "Postavke"
+    },
+    "jezik": "Jezik",
+    "@jezik": {
+        "context": "Language title",
+        "description": "naslov stranice za jezik"
+    },
+    "darkMode": "Tamna tema",
+    "@darkMode": {
+        "context": "Dark mode title",
+        "description": "naslov stranice za promjena light/dark mode"
+    },
+    "uloga": "Uloga",
+    "@uloga": {
+        "context": "Naslov role uloge",
+        "description": "naslov stranice za promjenu uloge usera"
+    },
+    "ulogaUcenik": "Učenik",
+    "@ulogaUcenik": {
+        "context": "Vrsta uloge korisnika",
+        "description": "Naziv uloge korisnika"
+    },
+    "ulogaStudentPredd": "Student preddiplomskog studija",
+    "@ulogaStudentPredd": {
+        "context": "Vrsta uloge korisnika",
+        "description": "Naziv uloge korisnika"
+    },
+    "ulogaStudentDipl": "Student diplomskog studija",
+    "@ulogaStudentDipl": {
+        "context": "Vrsta uloge korisnika",
+        "description": "Naziv uloge korisnika"
+    },
+    "izaberiJezik": "Izaberi jezik",
+    "@izaberiJezik": {
+        "context": "Dijalog",
+        "description": "Naslov dijaloga za izbor"
+    },
+    "primijeni": "Primijeni",
+    "@primijeni": {
+        "context": "Gumb text",
+        "description": "Gumb dijaloga za izbor, primjena opcije"
+    },
+    "odustani": "Zatvori",
+    "@odustani": {
+        "context": "Gumb text",
+        "description": "Gumb dijaloga za izbor, zatvaranje"
+    },
+    "izaberiUlogu": "Izaberi ulogu",
+    "@izaberiUlogu": {
+        "context": "Dijalog",
+        "description": "Naslov dijaloga za izbor uloge"
+    }
+}
