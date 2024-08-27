@@ -14,5 +14,13 @@
     "izaberiJezik": "Select language",
     "primijeni": "Apply",
     "odustani": "Cancel",
-    "izaberiUlogu": "Select role"
+    "izaberiUlogu": "Select role",
+    "misija": "Mission",
+    "misijaContent": "The Faculty of Informatics and Digital Technologies is a component of the University of Rijeka, which directs its activities towards the achievement of the goals defined by the Development Strategy of the University of Rijeka through the cooperation and partnership relationship of all stakeholders with the aim of achieving new scientific knowledge, encouraging innovation and transfer of knowledge, guided by a clearly defined vision of the faculty.",
+    "vizija": "Vision",
+    "vizijaContent": "We want to be a scientific institution with an international reputation that nurtures and encourages the highest academic values ​​of research and teaching work in the field of information sciences and computing in order to develop the economy and benefit society as a whole.",
+    "vrijednosti": "Values",
+    "vrijednostiContent": "1. Promotion of scientific excellence and international visibility, but also appreciation of diversity within different areas of scientific and professional work. \n\n2. Monitoring trends and new scientific knowledge to enable personal growth and development and competitiveness in the scientific and professional field. \n\n3. Strengthening cooperation and connection of all human resources at the Faculty, including students, teachers, researchers, non-teaching staff and external collaborators, as a mechanism of stability, joint development, quality and progress. \n\n4. Encouraging the development of the Faculty through cooperation with scientists in the country and abroad on scientific and professional projects. \n\n5. Encouraging the development of the Faculty through interdisciplinarity and cooperation on scientific projects and teaching programs with scientists from other compatible fields of science. \n\n6. Promotion of lifelong education and development of specialist studies. \n\n7. Promotion of the STEM field and transfer of knowledge to the local community and cooperation with the economy.",
+    "osnovneInfo": "Basic information & contact",
+    "adresa": "Radmile Matejčić 2, 51000 Rijeka, Republic of Croatia"
 }
