@@ -7,9 +7,13 @@ import 'package:fidit_me_jakupovic/models/definedroles.dart' as definedRoles;
 
 ///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian)
 class RoleDialog extends StatefulWidget {
-  const RoleDialog({super.key, required this.passedFunctionList});
+  const RoleDialog(
+      {super.key,
+      required this.passedFunctionList,
+      this.shouldHideCancelButton = false});
 
   final FunctionsList passedFunctionList;
+  final bool shouldHideCancelButton;
 
   @override
   State<StatefulWidget> createState() => RoleDialogState();
@@ -27,13 +31,16 @@ class RoleDialogState extends State<RoleDialog> {
 
   @override
   Widget build(BuildContext context) {
-    var cancelBtn = TextButton(
-        onPressed: () {
-          Navigator.of(context).pop(); //close dialog
-        },
-        child: Text(
-          AppLocalizations.of(context)!.odustani,
-        ));
+    var cancelBtn = widget.shouldHideCancelButton ==
+            true //if cancel button shouldnt be visible, hide the cancel button
+        ? Container()
+        : TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); //close dialog
+            },
+            child: Text(
+              AppLocalizations.of(context)!.odustani,
+            ));
     var applyBtn = TextButton(
         onPressed: () {
           widget.passedFunctionList.setRole!(selectedRole, shouldSave: true);
@@ -52,7 +59,7 @@ class RoleDialogState extends State<RoleDialog> {
         )),
       ),
       child: AlertDialog(
-        title: Text(AppLocalizations.of(context)!.izaberiJezik),
+        title: Text(AppLocalizations.of(context)!.izaberiUlogu),
         content: Column(
           children: [
             ...(definedRoles.definedRoleMap.keys)

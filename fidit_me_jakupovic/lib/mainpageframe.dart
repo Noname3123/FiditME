@@ -3,6 +3,7 @@ import 'package:fidit_me_jakupovic/navdrawer.dart';
 import 'package:fidit_me_jakupovic/pages/about.dart';
 import 'package:fidit_me_jakupovic/pages/dinps.dart';
 import 'package:fidit_me_jakupovic/pages/enroll.dart';
+import 'package:fidit_me_jakupovic/pages/role_select_popup.dart';
 import 'package:fidit_me_jakupovic/pages/settings.dart';
 import 'package:fidit_me_jakupovic/pages/studies.dart';
 import 'package:flutter/material.dart';
@@ -49,10 +50,17 @@ class MainPageState extends State<MainPageFrame> {
           style: const TextStyle(fontWeight: FontWeight.bold),
         )),
       ),
-      body: currentPage,
-      drawer: NavDrawer(
-        onPageChange: changePage,
-      ),
+      body: widget.passedFunctionsList.getRole!() == null
+          ? RoleDialog(
+              passedFunctionList: widget.passedFunctionsList,
+              shouldHideCancelButton: true,
+            ) //if no role selected, show only role select page with the cancel button hidden
+          : currentPage,
+      drawer: widget.passedFunctionsList.getRole!() == null
+          ? null
+          : NavDrawer(
+              onPageChange: changePage, //hide navdrawer if no role selected
+            ),
     );
   }
 

@@ -69,5 +69,10 @@
     "@odustani": {
         "context": "Gumb text",
         "description": "Gumb dijaloga za izbor, zatvaranje"
+    },
+    "izaberiUlogu": "Izaberi ulogu",
+    "@izaberiUlogu": {
+        "context": "Dijalog",
+        "description": "Naslov dijaloga za izbor uloge"
     }
 }
