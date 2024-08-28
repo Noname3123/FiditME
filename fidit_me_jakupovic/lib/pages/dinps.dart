@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
-import ''; //TODO: open filex here
+import 'package:open_filex/open_filex.dart'; //TODO: open filex here
 
 class DinpsPage extends StatelessWidget {
   const DinpsPage({super.key});
@@ -134,5 +134,6 @@ class DinpsPage extends StatelessWidget {
     await pdfFile.writeAsBytes(pdfResponse.bodyBytes);
 
     /*var pdfDocument =*/ //openfilex open file here;
+    OpenFilex.open(pdfFile.path);
   }
 }
