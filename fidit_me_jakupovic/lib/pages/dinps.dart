@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
+import ''; //TODO: open filex here
 
 class DinpsPage extends StatelessWidget {
   const DinpsPage({super.key});
@@ -70,7 +75,9 @@ class DinpsPage extends StatelessWidget {
             child: SizedBox(
               height: documentButtonStyleheight,
               child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  openDocument();
+                },
                 icon: Icon(
                   Icons.description,
                   size: iconSize,
@@ -95,5 +102,37 @@ class DinpsPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  ///This async method opens the appropriate document.
+  ///
+  void openDocument() async {
+    //TODO: add param which will open doc
+
+    Uri pdfurl = Uri(
+        scheme: "https",
+        host: "inf.uniri.hr",
+        path:
+            "/images/nastava/izvedbeni/2023_2024/PDS/1/DINP_FIDIT_2023_2024_MAT1.pdf");
+
+    var pdfResponse = await http.get(pdfurl);
+
+    if (pdfResponse.statusCode != 200) {
+      throw Exception('Failed to download PDF');
+    }
+
+    Directory tempDir = await getTemporaryDirectory();
+    var dirExists = await tempDir.exists();
+
+    if (!dirExists) {
+      await tempDir.create();
+    }
+
+    String tempPath = tempDir.path;
+
+    var pdfFile = File('$tempPath/pdf-doc.pdf');
+    await pdfFile.writeAsBytes(pdfResponse.bodyBytes);
+
+    /*var pdfDocument =*/ //openfilex open file here;
   }
 }

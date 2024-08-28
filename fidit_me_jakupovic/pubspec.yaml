@@ -45,6 +45,13 @@ dependencies:
   latlong2: ^0.9.1
   maps_launcher: ^2.2.1
   
+  http: ^1.2.2
+  path_provider: ^2.1.4
+  permission_handler: ^11.3.1
+  
+
+
+  
   
   
   
