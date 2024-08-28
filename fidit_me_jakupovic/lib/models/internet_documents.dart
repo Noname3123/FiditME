@@ -18,7 +18,7 @@ var dinpPreddiplomskiStudiji = {
           host: "inf.uniri.hr",
           path:
               "/images/nastava/izvedbeni/2023_2024/PDS/1/DINP_FIDIT_2023_2024_MAT1.pdf"),
-      documentName: "Matematika 1",
+      documentName: "Matematika1",
     ),
     Document(
       url: Uri(
@@ -26,7 +26,7 @@ var dinpPreddiplomskiStudiji = {
           host: "inf.uniri.hr",
           path:
               "/images/nastava/izvedbeni/2023_2024/PDS/1/DINP_FIDIT_2023_2024_OPROG.pdf"),
-      documentName: "Osnove programiranja",
+      documentName: "OsnoveProgramiranja",
     )
   ],
   2: [
@@ -36,7 +36,7 @@ var dinpPreddiplomskiStudiji = {
           host: "inf.uniri.hr",
           path:
               "images/nastava/izvedbeni/2023_2024/PDS/1/DINP_FIDIT_2023_2024_OS.pdf"),
-      documentName: "Operacijski sustavi",
+      documentName: "OperacijskiSustavi",
     )
   ]
 };
@@ -50,7 +50,7 @@ var dinpDiplomskiStudiji = {
           host: "inf.uniri.hr",
           path:
               "/images/nastava/izvedbeni/2023_2024/DS/1/DINP_FIDIT_2023_2024_DAP.pdf"),
-      documentName: "Dubinska analiza podataka",
+      documentName: "DubinskaAnalizaPodataka",
     )
   ],
   2: [
@@ -60,7 +60,7 @@ var dinpDiplomskiStudiji = {
           host: "inf.uniri.hr",
           path:
               "/images/nastava/izvedbeni/2023_2024/DS/1/DINP_FIDIT_2023_2024_SDU.pdf"),
-      documentName: "Strojno i duboko učenje",
+      documentName: "StrojnoiDubokoUcenje",
     )
   ]
 };

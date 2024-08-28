@@ -13,7 +13,12 @@ class DinpsPage extends StatelessWidget {
   const DinpsPage({super.key});
   final titleTextStyle =
       const TextStyle(fontSize: 36, fontWeight: FontWeight.bold);
-  final contentTextStyle = const TextStyle(fontSize: 32);
+  final contentTextStyle = const TextStyle(
+    fontSize: 16,
+  );
+  final subTitleTextStyle = const TextStyle(
+    fontSize: 32,
+  );
   final iconSize = 36.0;
 
   final documentButtonStyleheight = 64.0;
@@ -37,10 +42,10 @@ class DinpsPage extends StatelessWidget {
         ]));
   }
 
-  ///this method iterates through all DINP docs and renders a card for all of them. It returns a list of widgets
+//TODO: generateButtonsForDocuments, createCard, createDocumentButton, shareDocument, openDocument => move these methods and appropriate variables in a static class/ another package since it will be used for other sites
+  ///this method iterates through all DINP docs and renders a card for all of them. It returns a list of widgets. Required parameters are the build context of the widgets and a list of document objects
   Widget generateButtonsForDocuments(BuildContext context,
       Map<int, List<documents.Document>> listOfDocuments) {
-    //TODO: this method must receive a class containing dinp semester, subject name and appropriate share + open document methods
     return Column(
       children: [
         ...listOfDocuments.keys.map((key) {
@@ -48,8 +53,8 @@ class DinpsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "$key semestar",
-                style: contentTextStyle,
+                AppLocalizations.of(context)!.semestar(key),
+                style: subTitleTextStyle,
               ),
               const Divider(),
               ...listOfDocuments[key]!.map((document) {
@@ -59,14 +64,13 @@ class DinpsPage extends StatelessWidget {
             ],
           );
         })
-      ], //TODO: localize
+      ],
     );
   }
 
   ///this method creates and returns a Card widget which is populated with documents
   Widget createCard(BuildContext context,
       Map<int, List<documents.Document>> listOfDocuments) {
-    //TODO: add appropriate params to load names accurately
     return Card(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,13 +84,20 @@ class DinpsPage extends StatelessWidget {
         ),
         const Divider(),
         Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            AppLocalizations.of(context)!.izvedbeniPlanOpis,
+            style: contentTextStyle,
+          ),
+        ),
+        Padding(
             padding: const EdgeInsets.all(16.0),
             child: generateButtonsForDocuments(context, listOfDocuments)),
       ],
     ));
   }
 
-  ///This method returns a widget which represents a document button which contains share and download methods
+  ///This method returns a widget which represents a document button which contains share and download methods. It receives build context and document object as parameters. Build context is essential for establishing localization.
   Widget createDocumentButton(
       BuildContext context, documents.Document document) {
     return Padding(
@@ -111,7 +122,8 @@ class DinpsPage extends StatelessWidget {
                     size: iconSize,
                   ),
                   label: AutoSizeText(
-                    document.documentName,
+                    AppLocalizations.of(context)!
+                        .dokumenti(document.documentName),
                     style: contentTextStyle,
                     maxLines: 1,
                   ),
@@ -138,18 +150,14 @@ class DinpsPage extends StatelessWidget {
 
   ///this async method shares the document to appropriate app on the playtform
   void shareDocument(BuildContext context, documents.Document document) async {
-    //TODO: add param to determine doc URL
-
     Share.share(document.url.toString(),
-        subject:
-            "Sharing {filename}"); //TODO: Localize this message and instead of filename add the name of file
+        subject: AppLocalizations.of(context)!.porukaDijeljenjaDokumenta(
+            AppLocalizations.of(context)!.dokumenti(document.documentName)));
   }
 
   ///This async method opens the appropriate document.
   ///
   void openDocument(documents.Document document) async {
-    //TODO: add param which will open doc
-
     var pdfResponse = await http.get(document.url);
 
     if (pdfResponse.statusCode != 200) {
@@ -168,7 +176,6 @@ class DinpsPage extends StatelessWidget {
     var pdfFile = File('$tempPath/pdf-doc.pdf');
     await pdfFile.writeAsBytes(pdfResponse.bodyBytes);
 
-    /*var pdfDocument =*/ //openfilex open file here;
     OpenFilex.open(pdfFile.path);
   }
 }
