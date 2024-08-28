@@ -52,6 +52,7 @@ class LanguageDialogState extends State<LanguageDialog> {
       child: AlertDialog(
         title: Text(AppLocalizations.of(context)!.izaberiJezik),
         content: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ...(definedLocales.definedLanguageMap.keys)
                 .map((languageName) => RadioListTile<String?>(

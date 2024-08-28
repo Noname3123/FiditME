@@ -32,8 +32,7 @@ class MainApp extends StatefulWidget {
 class MainAppState extends State<MainApp> {
   var currentThemeMode = ThemeMode.light;
   var currentLocale = const Locale('en');
-  RoleSettings?
-      currentRole; //TODO: remain set as null in final - since load/save system would overload these intro settings. If it is null, then the dialog would open
+  RoleSettings? currentRole;
 
   @override
   void initState() {

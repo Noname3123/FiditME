@@ -44,8 +44,10 @@ class RoleDialogState extends State<RoleDialog> {
     var applyBtn = TextButton(
         onPressed: () {
           widget.passedFunctionList.setRole!(selectedRole, shouldSave: true);
-
-          Navigator.of(context).pop();
+          if (!widget.shouldHideCancelButton) {
+            Navigator.of(context)
+                .pop(); //Dont close page if starting for first time
+          }
         },
         child: Text(
           AppLocalizations.of(context)!.primijeni,
@@ -61,6 +63,7 @@ class RoleDialogState extends State<RoleDialog> {
       child: AlertDialog(
         title: Text(AppLocalizations.of(context)!.izaberiUlogu),
         content: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ...(definedRoles.definedRoleMap.keys)
                 .map((roleName) => RadioListTile<RoleSettings?>(

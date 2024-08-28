@@ -74,5 +74,48 @@
     "@izaberiUlogu": {
         "context": "Dijalog",
         "description": "Naslov dijaloga za izbor uloge"
+    },
+    "misija": "Misija",
+    "@misija": {
+        "context": "Title",
+        "description": "Naslov, about page"
+    },
+    "misijaContent": "Fakultet informatike i digitalnih tehnologija sastavnica je Sveučilišta u Rijeci koja svoje djelovanje usmjerava ka ostvarivanju ciljeva definiranih Strategijom razvoja Sveučilišta u Rijeci kroz suradnju i partnerski odnos svih dionika s ciljem postizanja novih znanstvenih spoznaja, poticanja inovacija i prijenosa znanja, vodeći se pritom jasno definiranom vizijom fakulteta.",
+    "@misijaContent": {
+        "context": "Content",
+        "description": "Sadržaj o misiji"
+    },
+    "vizija": "Vizija",
+    "@vizija": {
+        "context": "Title",
+        "description": "Naslov, about page"
+    },
+    "vizijaContent": "Želimo biti znanstvena institucija s međunarodnom reputacijom koja njeguje i potiče najviše akademske vrijednosti istraživačkog i nastavnog rada na području informacijskih znanosti i računarstva u cilju razvoja gospodarstva i ostvarivanja dobrobiti društvu u cjelini.",
+    "@vizijaContent": {
+        "context": "Content",
+        "description": "Sadržaj o viziji"
+    },
+    "vrijednosti": "Vrijednosti",
+    "@vrijednosti": {
+        "context": "Title",
+        "description": "Naslov, about page"
+    },
+    "vrijednostiContent": "1. Promicanje znanstvene izvrsnosti i međunarodne vidljivosti, ali i uvažavanje različitosti unutar različitih područja znanstvenog i stručnog rada. \n\n2. Praćenje trendova i novih znanstvenih spoznaja kako bi se omogućio osobni rast i razvoj te kompetitivnost na znanstvenom i stručnom području. \n\n3. Jačanje suradnje i povezivanja svih ljudskih potencijala na Fakultetu, uključujući studente, nastavnike, istraživače, nenastavno osoblje i vanjske suradnike, kao mehanizam stabilnosti, zajedničkog razvoja, kvalitete i napretka. \n\n4. Poticanje razvoja Fakulteta kroz suradnju sa znanstvenicima u zemlji i inozemstvu na znanstvenim i stručnim projektima. \n\n5. Poticanje razvoja Fakulteta kroz interdisciplinarnost i suradnju na znanstvenim projektima i nastavnim programima sa znanstvenicima iz drugih kompatibilnih područja znanosti. \n\n6. Promicanje cjeloživotnog obrazovanja i razvoj specijalističkih studija. \n\n7. Promocija STEM područja te transfer znanja lokalnoj zajednici i suradnja s gospodarstvom.",
+    "@vrijednostiContent": {
+        "context": "Content",
+        "description": "Sadržaj o vrijednostima"
+    },
+    "osnovneInfo": "Osnovne informacije i kontakt",
+    "@osnovneInfo": {
+        "context": "Title",
+        "description": "Naslov, about page"
+    },
+    "adresa": "Radmile Matejčić 2, 51000 Rijeka, Republika Hrvatska",
+    "@adresa": {
+        "description": "Adress of establishment"
+    },
+    "navigacijskiGumb": "Navigiraj me ovdje",
+    "@navigacijskiGumb": {
+        "description": "Content shown on navigate me here button"
     }
 }
