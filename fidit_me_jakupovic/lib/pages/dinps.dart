@@ -1,10 +1,13 @@
 import 'dart:io';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
-import 'package:open_filex/open_filex.dart'; //TODO: open filex here
+import 'package:open_filex/open_filex.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:fidit_me_jakupovic/models/internet_documents.dart' as documents;
 
 class DinpsPage extends StatelessWidget {
   const DinpsPage({super.key});
@@ -26,18 +29,43 @@ class DinpsPage extends StatelessWidget {
             )),
             dividerTheme: const DividerThemeData(
                 thickness: 2, indent: 15, endIndent: 15)),
-        child: ListView(
-            padding: const EdgeInsets.all(8),
-            children: [createDocumentCard(context)]));
+        child: ListView(padding: const EdgeInsets.all(8), children: [
+          createCard(
+              context,
+              documents
+                  .dinpPreddiplomskiStudiji) //TODO:change which docs are sent here depending on role
+        ]));
   }
 
   ///this method iterates through all DINP docs and renders a card for all of them. It returns a list of widgets
-  // Widget[] renderCardsForDINPS(){
-  //TODO: this method must receive a class containing dinp semester, subject name and appropriate share + open document methods
-  //}
+  Widget generateButtonsForDocuments(BuildContext context,
+      Map<int, List<documents.Document>> listOfDocuments) {
+    //TODO: this method must receive a class containing dinp semester, subject name and appropriate share + open document methods
+    return Column(
+      children: [
+        ...listOfDocuments.keys.map((key) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "$key semestar",
+                style: contentTextStyle,
+              ),
+              const Divider(),
+              ...listOfDocuments[key]!.map((document) {
+                return createDocumentButton(context, document);
+              }),
+              const Divider(),
+            ],
+          );
+        })
+      ], //TODO: localize
+    );
+  }
 
-  ///this method creates and returns a Card widget
-  Widget createDocumentCard(BuildContext context) {
+  ///this method creates and returns a Card widget which is populated with documents
+  Widget createCard(BuildContext context,
+      Map<int, List<documents.Document>> listOfDocuments) {
     //TODO: add appropriate params to load names accurately
     return Card(
         child: Column(
@@ -52,70 +80,77 @@ class DinpsPage extends StatelessWidget {
         ),
         const Divider(),
         Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [createDocumentButton(context)],
-          ),
-        ),
+            padding: const EdgeInsets.all(16.0),
+            child: generateButtonsForDocuments(context, listOfDocuments)),
       ],
     ));
   }
 
   ///This method returns a widget which represents a document button which contains share and download methods
-  Widget createDocumentButton(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primaryContainer,
-          borderRadius: const BorderRadius.horizontal(
-              left: Radius.circular(180), right: Radius.circular(180))),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: SizedBox(
+  Widget createDocumentButton(
+      BuildContext context, documents.Document document) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            borderRadius: const BorderRadius.horizontal(
+                left: Radius.circular(180), right: Radius.circular(180))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: SizedBox(
+                height: documentButtonStyleheight,
+                child: TextButton.icon(
+                  onPressed: () {
+                    openDocument(document);
+                  },
+                  icon: Icon(
+                    Icons.description,
+                    size: iconSize,
+                  ),
+                  label: AutoSizeText(
+                    document.documentName,
+                    style: contentTextStyle,
+                    maxLines: 1,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
               height: documentButtonStyleheight,
-              child: TextButton.icon(
+              child: FilledButton.tonalIcon(
                 onPressed: () {
-                  openDocument();
+                  shareDocument(context, document);
                 },
-                icon: Icon(
-                  Icons.description,
+                label: Icon(
+                  Icons.share,
                   size: iconSize,
                 ),
-                label: Text(
-                  "Filename",
-                  style: contentTextStyle,
-                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: documentButtonStyleheight,
-            child: FilledButton.tonalIcon(
-              onPressed: () {},
-              label: Icon(
-                Icons.share,
-                size: iconSize,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
+  ///this async method shares the document to appropriate app on the playtform
+  void shareDocument(BuildContext context, documents.Document document) async {
+    //TODO: add param to determine doc URL
+
+    Share.share(document.url.toString(),
+        subject:
+            "Sharing {filename}"); //TODO: Localize this message and instead of filename add the name of file
+  }
+
   ///This async method opens the appropriate document.
   ///
-  void openDocument() async {
+  void openDocument(documents.Document document) async {
     //TODO: add param which will open doc
 
-    Uri pdfurl = Uri(
-        scheme: "https",
-        host: "inf.uniri.hr",
-        path:
-            "/images/nastava/izvedbeni/2023_2024/PDS/1/DINP_FIDIT_2023_2024_MAT1.pdf");
-
-    var pdfResponse = await http.get(pdfurl);
+    var pdfResponse = await http.get(document.url);
 
     if (pdfResponse.statusCode != 200) {
       throw Exception('Failed to download PDF');
