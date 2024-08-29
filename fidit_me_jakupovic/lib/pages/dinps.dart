@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fidit_me_jakupovic/models/internet_documents.dart' as documents;
 import 'package:fidit_me_jakupovic/builder_classes/document_card_builder.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DinpsPage extends StatelessWidget {
   const DinpsPage({super.key});
@@ -19,8 +20,11 @@ class DinpsPage extends StatelessWidget {
         child: ListView(padding: const EdgeInsets.all(8), children: [
           DocumentCardBuilder.createCard(
               context,
-              documents
-                  .dinpPreddiplomskiStudiji) //TODO:change which docs are sent here depending on role
+              documents.dinpPreddiplomskiStudiji,
+              AppLocalizations.of(context)!.dinpPlanovi,
+              AppLocalizations.of(context)!.semestar,
+              cardContentDexcription: AppLocalizations.of(context)!
+                  .izvedbeniPlanOpis) //TODO:change which docs are sent here depending on role
         ]));
   }
 }

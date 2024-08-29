@@ -123,6 +123,7 @@
         "description": "Placeholder poruka za broj semestra",
         "placeholders": {
             "broj": {
+                "type": "String",
                 "example": "1"
             }
         }
@@ -149,48 +150,30 @@
             }
         }
     },
-    "diplomskiStudij": "{naslov, select, other{Diplomski studij}}",
-    "@diplomskiStudij": {
-        "description": "Subtitle for enrollment documents of  studies",
+    "dokumentiNaslov": "{naslov, select, diplomskiStudij{Diplomski studij} predDiplomskiStudij{Prijediplomski studij} upisViseGodine{Upis u više godine studija} programPredDiplomski{Program prijediplomskog studija} programDiplomski{Program diplomskog studija} other{Dokument nije dostupan}}",
+    "@dokumentiUpisNaslov": {
+        "description": "Subtitle for enrollment documents of  studies and study programes, based on selected data (from key)",
         "placeholders": {
             "naslov": {
                 "type": "String"
             }
         }
     },
-    "predDiplomskiStudij": "{naslov,select,other{Prijediplomski studij}}",
-    "@predDiplomskiStudij": {
-        "description": "Subtitle for enrollment documents of  studies",
-        "placeholders": {
-            "naslov": {
-                "type": "String"
-            }
-        }
+    "upisiTitle": "Upisi",
+    "@upisiTitle": {
+        "description": "Title for enrollments page"
     },
-    "upisViseGodine": "{naslov,select,other{Upis u više godine studija}}",
-    "@upisViseGodine": {
-        "description": "Subtitle for enrollment documents of  studies",
-        "placeholders": {
-            "naslov": {
-                "type": "String"
-            }
-        }
+    "oAplikaciji": "O aplikaciji",
+    "@oAplikaciji": {
+        "description": "Title for settings section about app"
     },
-    "programPredDiplomski": "{naslov,select,other{Program prijediplomskog studija}}",
-    "@programPredDiplomski": {
-        "description": "Subtitle for plan documents of studies",
+    "napravioPoruka": "Verzija {verNumber}\n\nNapravio Benjamin Jakupović.",
+    "@napravioPoruka": {
+        "description": "A message notifying user about the creator of the app.",
         "placeholders": {
-            "naslov": {
-                "type": "String"
-            }
-        }
-    },
-    "programDiplomski": "{naslov,select,other{Program diplomskog studija}}",
-    "@programDiplomski": {
-        "description": "Subtitle for plan documents of studies",
-        "placeholders": {
-            "naslov": {
-                "type": "String"
+            "verNumber": {
+                "type": "String",
+                "example": "1.0"
             }
         }
     }

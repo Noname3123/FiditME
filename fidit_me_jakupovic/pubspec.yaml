@@ -51,6 +51,7 @@ dependencies:
   open_filex: ^4.5.0
   share_plus: ^10.0.2
   auto_size_text: ^3.0.0
+  package_info_plus: ^8.0.2
   
 
 

@@ -7,6 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/definedlocales.dart'
     as definedLocales;
 import 'package:fidit_me_jakupovic/models/role_to_localized_name_mapper.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingsPage extends StatefulWidget {
   ///this constructor requires a map of functions, which are passed from parent to child
@@ -18,6 +19,16 @@ class SettingsPage extends StatefulWidget {
 }
 
 class SettingsPageState extends State<SettingsPage> {
+  String? versionNumber;
+
+  @override
+  void initState() {
+    PackageInfo.fromPlatform().then((onValue) {
+      versionNumber = onValue.version;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SettingsList(
@@ -76,6 +87,15 @@ class SettingsPageState extends State<SettingsPage> {
                 }),
           ],
         ),
+        SettingsSection(
+          title: Text(AppLocalizations.of(context)!.oAplikaciji),
+          tiles: <SettingsTile>[
+            SettingsTile.navigation(
+                leading: const Icon(Icons.info),
+                title: Text(AppLocalizations.of(context)!
+                    .napravioPoruka(versionNumber ?? "")))
+          ],
+        )
       ],
     );
   }

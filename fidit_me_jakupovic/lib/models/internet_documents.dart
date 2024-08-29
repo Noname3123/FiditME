@@ -11,7 +11,7 @@ class Document {
 
 ///This var is a map which contains a list of all documents linked to semester number (key) for undergraduate studies
 var dinpPreddiplomskiStudiji = {
-  1: [
+  "1": [
     Document(
       url: Uri(
           scheme: "https",
@@ -29,7 +29,7 @@ var dinpPreddiplomskiStudiji = {
       documentName: "OsnoveProgramiranja",
     )
   ],
-  2: [
+  "2": [
     Document(
       url: Uri(
           scheme: "https",
@@ -43,7 +43,7 @@ var dinpPreddiplomskiStudiji = {
 
 ///This var is a map which contains a list of all documents linked to semester number (key) for graduate studies
 var dinpDiplomskiStudiji = {
-  1: [
+  "1": [
     Document(
       url: Uri(
           scheme: "https",
@@ -53,7 +53,7 @@ var dinpDiplomskiStudiji = {
       documentName: "DubinskaAnalizaPodataka",
     )
   ],
-  2: [
+  "2": [
     Document(
       url: Uri(
           scheme: "https",
@@ -67,7 +67,7 @@ var dinpDiplomskiStudiji = {
 
 ///This var is of type Map<"String", List<Document>>
 var dokumentiUpisDiplomskiStudij = {
-  "DiplomskiStudij": [
+  "diplomskiStudij": [
     Document(
       url: Uri(
           scheme: "https",
@@ -80,7 +80,7 @@ var dokumentiUpisDiplomskiStudij = {
 };
 
 var dokumentiUpisPredDiplomskiStudij = {
-  "PredDiplomskiStudij": [
+  "predDiplomskiStudij": [
     Document(
       url: Uri(
           scheme: "https",
@@ -93,7 +93,7 @@ var dokumentiUpisPredDiplomskiStudij = {
 };
 
 var dokumentiUpisViseGodine = {
-  "UpisViseGodine": [
+  "upisViseGodine": [
     Document(
       url: Uri(
           scheme: "https",
@@ -107,7 +107,7 @@ var dokumentiUpisViseGodine = {
 
 ///This Map<String, List<Document>> contains a list of all documents related to the program of the undergraduate study
 var dokumentPrijediplomskiProgram = {
-  "ProgramPredDiplomski": [
+  "programPredDiplomski": [
     Document(
       url: Uri(
           scheme: "https",
@@ -121,7 +121,7 @@ var dokumentPrijediplomskiProgram = {
 
 ///This Map<String, List<Document>> contains a list of all documents related to the program of the graduate study
 var dokumentDiplomskiProgram = {
-  "ProgramDiplomski": [
+  "programDiplomski": [
     Document(
       url: Uri(
           scheme: "https",
