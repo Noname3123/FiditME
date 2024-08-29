@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/role_settings.dart';
 import 'package:localstorage/localstorage.dart';
-import 'package:fidit_me_jakupovic/models/definedroles.dart' as definedRoles;
+import 'package:fidit_me_jakupovic/models/definedroles.dart' as defined_roles;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized(); //necessarry for localstore DB
@@ -40,7 +40,7 @@ class MainAppState extends State<MainApp> {
     updateDarkModeStatus(
         bool.parse(localStorage.getItem("darkMode") ?? "false"));
     setLocale(localStorage.getItem("currentLanguageName") ?? "en");
-    setRole(definedRoles.definedRoleMap[localStorage.getItem("roleKey")]);
+    setRole(defined_roles.definedRoleMap[localStorage.getItem("roleKey")]);
 
     super.initState();
   }
@@ -112,7 +112,7 @@ class MainAppState extends State<MainApp> {
         SettingsData(
           currentLanguageName: currentLocale.languageCode,
           darkMode: getDarkModeStatus(),
-          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+          roleKey: defined_roles.getKeyBasedOnRole(currentRole),
         ).saveSettings();
       }
     });
@@ -134,7 +134,7 @@ class MainAppState extends State<MainApp> {
         SettingsData(
           currentLanguageName: langCode,
           darkMode: getDarkModeStatus(),
-          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+          roleKey: defined_roles.getKeyBasedOnRole(currentRole),
         ).saveSettings(); //Perform setting save when the locale/ role/ dark mode changes
       }
     });
@@ -153,7 +153,7 @@ class MainAppState extends State<MainApp> {
         SettingsData(
           currentLanguageName: currentLocale.languageCode,
           darkMode: getDarkModeStatus(),
-          roleKey: definedRoles.getKeyBasedOnRole(currentRole),
+          roleKey: defined_roles.getKeyBasedOnRole(currentRole),
         ).saveSettings();
       }
     });

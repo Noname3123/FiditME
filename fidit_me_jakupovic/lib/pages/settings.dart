@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/definedlocales.dart'
-    as definedLocales;
+    as defined_locales;
 import 'package:fidit_me_jakupovic/models/role_to_localized_name_mapper.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -41,7 +41,7 @@ class SettingsPageState extends State<SettingsPage> {
             SettingsTile.navigation(
               leading: const Icon(Icons.language),
               title: Text(AppLocalizations.of(context)!.jezik),
-              value: Text(definedLocales.getKeyBasedOnLocale(
+              value: Text(defined_locales.getKeyBasedOnLocale(
                   widget.passedFunctionsList.getLocale!())),
               onPressed: (BuildContext context) {
                 showDialog(

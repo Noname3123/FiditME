@@ -9,7 +9,8 @@ class RoleSettings {
     required this.hideSeniorYearsEnrollmentDocs,
     required this.hideUnderGraduateStudyDINPS,
     required this.hideGraduateStudyDINPS,
-  }); //TODO: create class which will be used for configuring app from role perspective
+  });
+
   ///Should hide dinp page from user?
   bool hideDinpPage = false;
 

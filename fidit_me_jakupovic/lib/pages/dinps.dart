@@ -17,7 +17,6 @@ class DinpsPage extends StatelessWidget {
       documents.dinpDiplomskiStudiji: getRole().hideGraduateStudyDINPS
     };
 
-    // TODO: implement page
     return Theme(
         data: Theme.of(context).copyWith(
             listTileTheme: const ListTileThemeData(
@@ -34,7 +33,6 @@ class DinpsPage extends StatelessWidget {
               AppLocalizations.of(context)!.semestar,
               cardContentDescription:
                   AppLocalizations.of(context)!.izvedbeniPlanOpis),
-          //TODO:change which docs are sent here depending on role
         ]));
   }
 }

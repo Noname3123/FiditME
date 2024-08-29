@@ -34,7 +34,7 @@ final definedRoleMap = {
   )
 };
 
-///For a given RoleSetting, find the appropriate key in the definedRoleMap or return the default key (String is the return type)
+///For a given RoleSetting, find the appropriate key in the definedRoleMap or return the default key "Student" (String is the return type)
 String getKeyBasedOnRole(RoleSettings? role) {
   return definedRoleMap.keys.firstWhere((key) => definedRoleMap[key] == role,
       orElse: () => "Student");

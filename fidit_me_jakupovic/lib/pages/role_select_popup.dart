@@ -3,7 +3,7 @@ import 'package:fidit_me_jakupovic/models/role_settings.dart';
 import 'package:fidit_me_jakupovic/models/role_to_localized_name_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:fidit_me_jakupovic/models/definedroles.dart' as definedRoles;
+import 'package:fidit_me_jakupovic/models/definedroles.dart' as defined_roles;
 
 ///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian)
 class RoleDialog extends StatefulWidget {
@@ -65,18 +65,18 @@ class RoleDialogState extends State<RoleDialog> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ...(definedRoles.definedRoleMap.keys)
+            ...(defined_roles.definedRoleMap.keys)
                 .map((roleName) => RadioListTile<RoleSettings?>(
                       title: Text(RoleToLocalizedNameMapper(
                               context: context, getRole: () {})
                           .getLocalizedRoleNameByKey(roleName)),
-                      value: definedRoles.definedRoleMap[roleName],
+                      value: defined_roles.definedRoleMap[roleName],
                       groupValue: selectedRole,
                       onChanged: (RoleSettings? value) {
                         setState(() {
                           value == null
                               ? selectedRole =
-                                  definedRoles.definedRoleMap["Student"]
+                                  defined_roles.definedRoleMap["Student"]
                               : selectedRole = value;
                         });
                       },

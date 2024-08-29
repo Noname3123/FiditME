@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'definedroles.dart' as definedRoles;
+import 'definedroles.dart' as defined_roles;
 
 ///this class exposes methods which map the role to a localised name matching the role
 class RoleToLocalizedNameMapper {
@@ -23,7 +23,7 @@ class RoleToLocalizedNameMapper {
     }
 
     var localizedName =
-        roleToLocalizedNameMap[definedRoles.getKeyBasedOnRole(currentRole)];
+        roleToLocalizedNameMap[defined_roles.getKeyBasedOnRole(currentRole)];
 
     if (localizedName == null) {
       return AppLocalizations.of(context)!

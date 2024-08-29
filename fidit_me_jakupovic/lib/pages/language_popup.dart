@@ -2,7 +2,7 @@ import 'package:fidit_me_jakupovic/models/functionslist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/definedlocales.dart'
-    as definedLocales;
+    as defined_locales;
 
 ///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian)
 class LanguageDialog extends StatefulWidget {
@@ -54,10 +54,10 @@ class LanguageDialogState extends State<LanguageDialog> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ...(definedLocales.definedLanguageMap.keys)
+            ...(defined_locales.definedLanguageMap.keys)
                 .map((languageName) => RadioListTile<String?>(
                       title: Text(languageName),
-                      value: definedLocales.definedLanguageMap[languageName],
+                      value: defined_locales.definedLanguageMap[languageName],
                       groupValue: selectedLang,
                       onChanged: (String? value) {
                         setState(() {

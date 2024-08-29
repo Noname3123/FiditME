@@ -10,8 +10,6 @@ class EnrollPage extends StatelessWidget {
   final Function getRole;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement page
-
     Map<Map<String, List<documents.Document>>, bool>
         documentsRolePermissionMap = {
       //this maps a list of docs to the appropriate role permission
@@ -37,7 +35,6 @@ class EnrollPage extends StatelessWidget {
               documentsRolePermissionMap,
               AppLocalizations.of(context)!.upisi,
               AppLocalizations.of(context)!.dokumentiNaslov)
-          //TODO:change which docs are sent here depending on role
         ]));
   }
 }

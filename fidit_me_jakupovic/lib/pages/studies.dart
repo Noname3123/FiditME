@@ -17,7 +17,7 @@ class StudiesPage extends StatelessWidget {
           getRole().hidePlanOfUndergraduateStudies,
       documents.dokumentDiplomskiProgram: getRole().hidePlanOfGraduateStudies,
     };
-    // TODO: implement page
+
     return Theme(
         data: Theme.of(context).copyWith(
             listTileTheme: const ListTileThemeData(
@@ -31,8 +31,7 @@ class StudiesPage extends StatelessWidget {
               context,
               documentsRolePermissionMap,
               AppLocalizations.of(context)!.studiji,
-              AppLocalizations.of(context)!
-                  .dokumentiNaslov) //TODO:change which docs are sent here depending on role
+              AppLocalizations.of(context)!.dokumentiNaslov)
         ]));
   }
 }
