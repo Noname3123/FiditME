@@ -24,7 +24,9 @@ class SettingsPageState extends State<SettingsPage> {
   @override
   void initState() {
     PackageInfo.fromPlatform().then((onValue) {
-      versionNumber = onValue.version;
+      setState(() {
+        versionNumber = onValue.version;
+      });
     });
     super.initState();
   }

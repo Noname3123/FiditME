@@ -29,7 +29,6 @@
     "dokumenti": "{predmet, select, Matematika1{Mathematics 1}  OsnoveProgramiranja{Basics of programming} OperacijskiSustavi{Operating systems} DubinskaAnalizaPodataka{InDepth data analysis} StrojnoiDubokoUcenje{Machine and deep learning} NatjecajZaUpisUPrvuGodinuDiplomskog{Competition for admission to the first year of the graduate program} NatjecajZaUpisUPrvuGodinuPredDiplomskog{Competition for admission to the first year of the undergraduate program} OdlukaOUvjetimaUpisaUVisuGodinuStudija{Decision on conditions for enrollment in the senior year of study} PlanProgramPredDiplomskog{Plan and program of the university undergraduate study in informatics} PlanProgramDiplomskog{Plan and program of the university graduate study in informatics} other{nedostupno}}",
     "porukaDijeljenjaDokumenta": "Sharing document {nazivDokumenta}",
     "dokumentiNaslov": "{naslov, select, diplomskiStudij{Graduate Study} predDiplomskiStudij{Undergraduate Study} upisViseGodine{Enrollment in senior years of study} programPredDiplomski{Undergraduate study program} programDiplomski{Graduate study program} other{Document is not available}}",
-    "upisiTitle": "Enrollments",
     "oAplikaciji": "About application",
     "napravioPoruka": "Version {verNumber}\n\nCreated by Benjamin Jakupović."
 }

@@ -159,10 +159,6 @@
             }
         }
     },
-    "upisiTitle": "Upisi",
-    "@upisiTitle": {
-        "description": "Title for enrollments page"
-    },
     "oAplikaciji": "O aplikaciji",
     "@oAplikaciji": {
         "description": "Title for settings section about app"
