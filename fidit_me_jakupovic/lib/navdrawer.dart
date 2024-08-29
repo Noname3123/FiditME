@@ -3,10 +3,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 ///this class inits the sidebar used for navigation.
 class NavDrawer extends StatelessWidget {
-  ///constructor of this class receives the method  onPageChange which is called when app drawers onTap event is executed
-  const NavDrawer({super.key, required this.onPageChange});
+  ///constructor of this class receives the method  onPageChange which is called when app drawers onTap event is executed. getRole is a method which returns the active role of app
+  const NavDrawer(
+      {super.key, required this.onPageChange, required this.getRole});
 
   final Function onPageChange;
+  final Function getRole;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -43,12 +45,14 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               rerouteAndCloseDrawer(context, 2);
             }),
-        ListTile(
-            leading: const Icon(Icons.description),
-            title: Text(AppLocalizations.of(context)!.dinpPlanovi),
-            onTap: () {
-              rerouteAndCloseDrawer(context, 3);
-            }),
+        getRole().hideDinpPage == true
+            ? Container()
+            : ListTile(
+                leading: const Icon(Icons.description),
+                title: Text(AppLocalizations.of(context)!.dinpPlanovi),
+                onTap: () {
+                  rerouteAndCloseDrawer(context, 3);
+                }),
         const Divider(),
         ListTile(
             leading: const Icon(Icons.settings),

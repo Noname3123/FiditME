@@ -32,9 +32,13 @@ class MainPageState extends State<MainPageFrame> {
   void initState() {
     allPagesList = [
       const AboutPage(),
-      const EnrollPage(),
+      EnrollPage(
+        getRole: widget.passedFunctionsList.getRole!,
+      ),
       const StudiesPage(),
-      const DinpsPage(),
+      DinpsPage(
+        getRole: widget.passedFunctionsList.getRole!,
+      ),
       SettingsPage(passedFunctionsList: widget.passedFunctionsList)
     ];
     super.initState();
@@ -59,6 +63,7 @@ class MainPageState extends State<MainPageFrame> {
           ? null
           : NavDrawer(
               onPageChange: changePage, //hide navdrawer if no role selected
+              getRole: widget.passedFunctionsList.getRole!,
             ),
     );
   }
