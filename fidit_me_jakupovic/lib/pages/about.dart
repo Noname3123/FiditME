@@ -192,7 +192,7 @@ class AboutPageState extends State<AboutPage> {
             initialCenter: location,
             initialZoom: 17,
             interactionOptions:
-                const InteractionOptions(flags: InteractiveFlag.pinchMove)),
+                const InteractionOptions(flags: InteractiveFlag.pinchZoom)),
         children: [
           openStreetMapTile,
           MarkerLayer(markers: [

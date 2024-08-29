@@ -8,6 +8,7 @@ import 'package:fidit_me_jakupovic/models/definedlocales.dart'
     as defined_locales;
 import 'package:fidit_me_jakupovic/models/role_to_localized_name_mapper.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SettingsPage extends StatefulWidget {
   ///this constructor requires a map of functions, which are passed from parent to child
@@ -93,9 +94,20 @@ class SettingsPageState extends State<SettingsPage> {
           title: Text(AppLocalizations.of(context)!.oAplikaciji),
           tiles: <SettingsTile>[
             SettingsTile.navigation(
-                leading: const Icon(Icons.info),
-                title: Text(AppLocalizations.of(context)!
-                    .napravioPoruka(versionNumber ?? "")))
+                title: Center(
+              child: Column(
+                children: [
+                  SvgPicture.asset(
+                    'assets/icon/launcher_icon.svg',
+                  ),
+                  Text(
+                    AppLocalizations.of(context)!
+                        .napravioPoruka(versionNumber ?? ""),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ))
           ],
         )
       ],

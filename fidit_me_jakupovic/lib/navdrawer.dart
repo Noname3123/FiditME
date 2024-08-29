@@ -23,44 +23,47 @@ class NavDrawer extends StatelessWidget {
 
   ///this method returns main app drawer elements and adds a padding arround them. the method must receive widgets buildCOntext as param
   Widget buildDrawerElements(BuildContext context) {
-    return Wrap(
-      runSpacing: 9,
-      children: [
-        ListTile(
-            leading: const Icon(Icons.info),
-            title: Text(AppLocalizations.of(context)!.oFakultetu),
+    return Padding(
+      padding: MediaQuery.of(context).padding,
+      child: Wrap(
+        runSpacing: 9,
+        children: [
+          ListTile(
+              leading: const Icon(Icons.info),
+              title: Text(AppLocalizations.of(context)!.oFakultetu),
+              onTap: () {
+                rerouteAndCloseDrawer(context, 0);
+              }),
+          ListTile(
+            leading: const Icon(Icons.edit),
+            title: Text(AppLocalizations.of(context)!.upisi),
             onTap: () {
-              rerouteAndCloseDrawer(context, 0);
-            }),
-        ListTile(
-          leading: const Icon(Icons.edit),
-          title: Text(AppLocalizations.of(context)!.upisi),
-          onTap: () {
-            rerouteAndCloseDrawer(context, 1);
-          },
-        ),
-        ListTile(
-            leading: const Icon(Icons.school),
-            title: Text(AppLocalizations.of(context)!.studiji),
-            onTap: () {
-              rerouteAndCloseDrawer(context, 2);
-            }),
-        getRole().hideDinpPage == true
-            ? Container()
-            : ListTile(
-                leading: const Icon(Icons.description),
-                title: Text(AppLocalizations.of(context)!.dinpPlanovi),
-                onTap: () {
-                  rerouteAndCloseDrawer(context, 3);
-                }),
-        const Divider(),
-        ListTile(
-            leading: const Icon(Icons.settings),
-            title: Text(AppLocalizations.of(context)!.postavke),
-            onTap: () {
-              rerouteAndCloseDrawer(context, 4);
-            }),
-      ],
+              rerouteAndCloseDrawer(context, 1);
+            },
+          ),
+          ListTile(
+              leading: const Icon(Icons.school),
+              title: Text(AppLocalizations.of(context)!.studiji),
+              onTap: () {
+                rerouteAndCloseDrawer(context, 2);
+              }),
+          getRole().hideDinpPage == true
+              ? Container()
+              : ListTile(
+                  leading: const Icon(Icons.description),
+                  title: Text(AppLocalizations.of(context)!.dinpPlanovi),
+                  onTap: () {
+                    rerouteAndCloseDrawer(context, 3);
+                  }),
+          const Divider(),
+          ListTile(
+              leading: const Icon(Icons.settings),
+              title: Text(AppLocalizations.of(context)!.postavke),
+              onTap: () {
+                rerouteAndCloseDrawer(context, 4);
+              }),
+        ],
+      ),
     );
   }
 
