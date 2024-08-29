@@ -152,7 +152,7 @@
     },
     "dokumentiNaslov": "{naslov, select, diplomskiStudij{Diplomski studij} predDiplomskiStudij{Prijediplomski studij} upisViseGodine{Upis u više godine studija} programPredDiplomski{Program prijediplomskog studija} programDiplomski{Program diplomskog studija} other{Dokument nije dostupan}}",
     "@dokumentiUpisNaslov": {
-        "description": "Subtitle for groups documents on studies and study programes page, based on selected data passed to method",
+        "description": "Subtitle for groups of documents on studies and study programes page, based on selected data passed to method. Passed data is key of the document map",
         "placeholders": {
             "naslov": {
                 "type": "String"
