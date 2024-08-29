@@ -114,7 +114,7 @@
     "@adresa": {
         "description": "Adress of establishment"
     },
-    "navigacijskiGumb": "Navigiraj me ovdje",
+    "navigacijskiGumb": "Otvori u Google Kartama",
     "@navigacijskiGumb": {
         "description": "Content shown on navigate me here button"
     },
@@ -131,7 +131,7 @@
     "@izvedbeniPlanOpis": {
         "description": "Introductory text which defines the role of the page"
     },
-    "dokumenti": "{predmet, select, Matematika1{Matematika 1}  OsnoveProgramiranja{Osnove programiranja} OperacijskiSustavi{Operacijski sustavi} DubinskaAnalizaPodataka{Dubinska analiza podataka} StrojnoiDubokoUcenje{Strojno i duboko učenje} other{nedostupno}}",
+    "dokumenti": "{predmet, select, Matematika1{Matematika 1}  OsnoveProgramiranja{Osnove programiranja} OperacijskiSustavi{Operacijski sustavi} DubinskaAnalizaPodataka{Dubinska analiza podataka} StrojnoiDubokoUcenje{Strojno i duboko učenje} NatjecajZaUpisUPrvuGodinuDiplomskog{Natječaj za upis u prvu godinu diplomskog} NatjecajZaUpisUPrvuGodinuPredDiplomskog{Natječaj za upis u prvu godinu prijediplomskog} OdlukaOUvjetimaUpisaUVisuGodinuStudija{Odluka o uvjetima upisa u višu godinu studija} PlanProgramPredDiplomskog{Plan i program sveučilišnog prijediplomskog studija informatika} PlanProgramDiplomskog{Plan i program sveučilišnog diplomskog studija informatika} other{nedostupno}}",
     "@dokumenti": {
         "description": "this maps the name of the document in Document class (package internet_documents.dart) to the file name appropriate to the localization",
         "placeholders": {
@@ -145,6 +145,51 @@
         "description": "Subject message when sharing document",
         "placeholders": {
             "nazivDokumenta": {
+                "type": "String"
+            }
+        }
+    },
+    "diplomskiStudij": "{naslov, select, other{Diplomski studij}}",
+    "@diplomskiStudij": {
+        "description": "Subtitle for enrollment documents of  studies",
+        "placeholders": {
+            "naslov": {
+                "type": "String"
+            }
+        }
+    },
+    "predDiplomskiStudij": "{naslov,select,other{Prijediplomski studij}}",
+    "@predDiplomskiStudij": {
+        "description": "Subtitle for enrollment documents of  studies",
+        "placeholders": {
+            "naslov": {
+                "type": "String"
+            }
+        }
+    },
+    "upisViseGodine": "{naslov,select,other{Upis u više godine studija}}",
+    "@upisViseGodine": {
+        "description": "Subtitle for enrollment documents of  studies",
+        "placeholders": {
+            "naslov": {
+                "type": "String"
+            }
+        }
+    },
+    "programPredDiplomski": "{naslov,select,other{Program prijediplomskog studija}}",
+    "@programPredDiplomski": {
+        "description": "Subtitle for plan documents of studies",
+        "placeholders": {
+            "naslov": {
+                "type": "String"
+            }
+        }
+    },
+    "programDiplomski": "{naslov,select,other{Program diplomskog studija}}",
+    "@programDiplomski": {
+        "description": "Subtitle for plan documents of studies",
+        "placeholders": {
+            "naslov": {
                 "type": "String"
             }
         }
