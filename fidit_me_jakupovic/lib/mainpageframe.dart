@@ -44,11 +44,10 @@ class MainPageState extends State<MainPageFrame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-            child: Text(
+        title: Text(
           widget.title,
           style: const TextStyle(fontWeight: FontWeight.bold),
-        )),
+        ),
       ),
       body: widget.passedFunctionsList.getRole!() == null
           ? RoleDialog(
