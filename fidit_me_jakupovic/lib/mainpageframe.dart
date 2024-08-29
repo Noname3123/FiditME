@@ -35,7 +35,9 @@ class MainPageState extends State<MainPageFrame> {
       EnrollPage(
         getRole: widget.passedFunctionsList.getRole!,
       ),
-      const StudiesPage(),
+      StudiesPage(
+        getRole: widget.passedFunctionsList.getRole!,
+      ),
       DinpsPage(
         getRole: widget.passedFunctionsList.getRole!,
       ),

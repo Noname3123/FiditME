@@ -11,6 +11,18 @@ class EnrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement page
+
+    Map<Map<String, List<documents.Document>>, bool>
+        documentsRolePermissionMap = {
+      //this maps a list of docs to the appropriate role permission
+      documents.dokumentiUpisPredDiplomskiStudij:
+          getRole().hideUndergraduateStudiesEnrollment,
+      documents.dokumentiUpisDiplomskiStudij:
+          getRole().hideGraduateStudiesEnrollment,
+      documents.dokumentiUpisViseGodine:
+          getRole().hideSeniorYearsEnrollmentDocs,
+    };
+
     return Theme(
         data: Theme.of(context).copyWith(
             listTileTheme: const ListTileThemeData(
@@ -20,27 +32,12 @@ class EnrollPage extends StatelessWidget {
             dividerTheme: const DividerThemeData(
                 thickness: 2, indent: 15, endIndent: 15)),
         child: ListView(padding: const EdgeInsets.all(8), children: [
-          getRole().hideUndergraduateStudiesEnrollment == false
-              ? DocumentCardBuilder.createCard(
-                  context,
-                  documents.dokumentiUpisPredDiplomskiStudij,
-                  AppLocalizations.of(context)!.upisi,
-                  AppLocalizations.of(context)!.dokumentiNaslov)
-              : Container(),
-          getRole().hideGraduateStudiesEnrollment == false
-              ? DocumentCardBuilder.createCard(
-                  context,
-                  documents.dokumentiUpisDiplomskiStudij,
-                  "AppLocalizations.of(context)!.upisi",
-                  AppLocalizations.of(context)!.dokumentiNaslov)
-              : Container(),
-          getRole().hideSeniorYearsEnrollmentDocs == false
-              ? DocumentCardBuilder.createCard(
-                  context,
-                  documents.dokumentiUpisViseGodine,
-                  AppLocalizations.of(context)!.upisi,
-                  AppLocalizations.of(context)!.dokumentiNaslov)
-              : Container(), //TODO:change which docs are sent here depending on role
+          DocumentCardBuilder.createCard(
+              context,
+              documentsRolePermissionMap,
+              AppLocalizations.of(context)!.upisi,
+              AppLocalizations.of(context)!.dokumentiNaslov)
+          //TODO:change which docs are sent here depending on role
         ]));
   }
 }

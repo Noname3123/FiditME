@@ -23,8 +23,8 @@ class DocumentCardBuilder {
 
   static const documentButtonStyleheight = 64.0;
 
-  ///this method iterates through all DINP docs and renders a card for all of them. It returns a list of widgets. Required parameters are the build context of the widgets and a list of document objects
-  ///appLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map)
+  ///this method iterates through all DINP docs and renders a column of buttons. It returns a widget. Required parameters are the build context of the widgets and a list of document objects. Depending on value from that map - appropriate documents are loaded
+  ///. AppLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map)
   static Widget _generateButtonsForDocuments(
       BuildContext context,
       Map<String, List<documents.Document>> listOfDocuments,
@@ -51,13 +51,13 @@ class DocumentCardBuilder {
     );
   }
 
-  ///this method creates and returns a Card widget which is populated with documents. In order to build page, it needs to receie build context parameter, a map of all documents (Map<String, List<Document>) and a title of the main card (String). The last optional parameter (String?) adds description text below the card's title. If left empty, it will not render. appLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map)
+  ///This method creates and returns a Card widget which is populated with documents. In order to build, it needs to receie build context parameter, a  map linking a list of document objects with boolean as hide parameters (gotten from role settings) and a title of the main card (String). The last optional parameter (String?) adds description text below the card's title. If left empty, it will not render. appLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map).
   static Widget createCard(
       BuildContext context,
-      Map<String, List<documents.Document>> listOfDocuments,
+      Map<Map<String, List<documents.Document>>, bool> listOfDocuments,
       String cardTitle,
       Function appLocalizationFunction,
-      {String? cardContentDexcription}) {
+      {String? cardContentDescription}) {
     return Card(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,19 +70,29 @@ class DocumentCardBuilder {
           ),
         ),
         const Divider(),
-        cardContentDexcription == null
+        cardContentDescription == null
             ? Container()
             : Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  cardContentDexcription,
+                  cardContentDescription,
                   style: contentTextStyle,
                 ),
               ),
         Padding(
             padding: const EdgeInsets.all(16.0),
-            child: _generateButtonsForDocuments(
-                context, listOfDocuments, appLocalizationFunction)),
+            child: Column(
+              children: [
+                ...listOfDocuments.keys.map((documentList) {
+                  if (listOfDocuments[documentList] == false) {
+                    //if the value for this document map is false it can be rendered
+                    return _generateButtonsForDocuments(
+                        context, documentList, appLocalizationFunction);
+                  }
+                  return Container();
+                })
+              ],
+            )),
       ],
     ));
   }

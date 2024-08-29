@@ -11,6 +11,12 @@ class DinpsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<Map<String, List<documents.Document>>, bool>
+        documentsRolePermissionMap = {
+      documents.dinpPreddiplomskiStudiji: getRole().hideUnderGraduateStudyDINPS,
+      documents.dinpDiplomskiStudiji: getRole().hideGraduateStudyDINPS
+    };
+
     // TODO: implement page
     return Theme(
         data: Theme.of(context).copyWith(
@@ -21,24 +27,14 @@ class DinpsPage extends StatelessWidget {
             dividerTheme: const DividerThemeData(
                 thickness: 2, indent: 15, endIndent: 15)),
         child: ListView(padding: const EdgeInsets.all(8), children: [
-          getRole().hideUnderGraduateStudyDINPS == false
-              ? DocumentCardBuilder.createCard(
-                  context,
-                  documents.dinpPreddiplomskiStudiji,
-                  AppLocalizations.of(context)!.dinpPlanovi,
-                  AppLocalizations.of(context)!.semestar,
-                  cardContentDexcription:
-                      AppLocalizations.of(context)!.izvedbeniPlanOpis)
-              : Container(),
-          getRole().hideGraduateStudyDINPS == false
-              ? DocumentCardBuilder.createCard(
-                  context,
-                  documents.dinpDiplomskiStudiji,
-                  AppLocalizations.of(context)!.dinpPlanovi,
-                  AppLocalizations.of(context)!.semestar,
-                  cardContentDexcription:
-                      AppLocalizations.of(context)!.izvedbeniPlanOpis)
-              : Container(), //TODO:change which docs are sent here depending on role
+          DocumentCardBuilder.createCard(
+              context,
+              documentsRolePermissionMap,
+              AppLocalizations.of(context)!.dinpPlanovi,
+              AppLocalizations.of(context)!.semestar,
+              cardContentDescription:
+                  AppLocalizations.of(context)!.izvedbeniPlanOpis),
+          //TODO:change which docs are sent here depending on role
         ]));
   }
 }
