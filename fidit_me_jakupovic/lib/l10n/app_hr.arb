@@ -132,7 +132,7 @@
     "@izvedbeniPlanOpis": {
         "description": "Introductory text which defines the role of the page"
     },
-    "dokumenti": "{predmet, select, Matematika1{Matematika 1}  OsnoveProgramiranja{Osnove programiranja} OperacijskiSustavi{Operacijski sustavi} DubinskaAnalizaPodataka{Dubinska analiza podataka} StrojnoiDubokoUcenje{Strojno i duboko učenje} NatjecajZaUpisUPrvuGodinuDiplomskog{Natječaj za upis u prvu godinu diplomskog} NatjecajZaUpisUPrvuGodinuPredDiplomskog{Natječaj za upis u prvu godinu prijediplomskog} OdlukaOUvjetimaUpisaUVisuGodinuStudija{Odluka o uvjetima upisa u višu godinu studija} PlanProgramPredDiplomskog{Plan i program sveučilišnog prijediplomskog studija informatika} PlanProgramDiplomskog{Plan i program sveučilišnog diplomskog studija informatika} other{nedostupno}}",
+    "dokumenti": "{predmet, select, Matematika1{Matematika 1}  OsnoveProgramiranja{Osnove programiranja} OperacijskiSustavi{Operacijski sustavi} DubinskaAnalizaPodataka{Dubinska analiza podataka} StrojnoiDubokoUcenje{Strojno i duboko učenje} NatjecajZaUpisUPrvuGodinuDiplomskog{Natječaj za upis u prvu godinu diplomskog studija} NatjecajZaUpisUPrvuGodinuPredDiplomskog{Natječaj za upis u prvu godinu prijediplomskog studija} OdlukaOUvjetimaUpisaUVisuGodinuStudija{Odluka o uvjetima upisa u višu godinu studija} PlanProgramPredDiplomskog{Plan i program sveučilišnog prijediplomskog studija informatika} PlanProgramDiplomskog{Plan i program sveučilišnog diplomskog studija informatika} other{nedostupno}}",
     "@dokumenti": {
         "description": "this maps the name of the document in Document class (package internet_documents.dart) to the file name appropriate to the localization",
         "placeholders": {
@@ -152,7 +152,7 @@
     },
     "dokumentiNaslov": "{naslov, select, diplomskiStudij{Diplomski studij} predDiplomskiStudij{Prijediplomski studij} upisViseGodine{Upis u više godine studija} programPredDiplomski{Program prijediplomskog studija} programDiplomski{Program diplomskog studija} other{Dokument nije dostupan}}",
     "@dokumentiUpisNaslov": {
-        "description": "Subtitle for enrollment documents of  studies and study programes, based on selected data (from key)",
+        "description": "Subtitle for groups documents on studies and study programes page, based on selected data passed to method",
         "placeholders": {
             "naslov": {
                 "type": "String"
