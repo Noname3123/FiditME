@@ -51,7 +51,7 @@ class DocumentCardBuilder {
     );
   }
 
-  ///This method creates and returns a Card widget which is populated with documents. In order to build, it needs to receie build context parameter, a  map linking a list of document objects with boolean as hide parameters (gotten from role settings) and a title of the main card (String). The last optional parameter (String?) adds description text below the card's title. If left empty, it will not render. appLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map).
+  ///This method creates and returns a Card widget which is populated with documents. In order to build, it needs to receive build context parameter, a  map linking a list of document objects with boolean as hide parameters (gotten from role settings) and a title of the main card (String). The last optional parameter (String?) adds description text below the card's title. If left empty, it will not render. appLocalizationFunction parameter receives the name of the applocalizacion function which creates subtitles based on category of the document (key of the document list in the document map).
   static Widget createCard(
       BuildContext context,
       Map<Map<String, List<documents.Document>>, bool> listOfDocuments,
@@ -148,7 +148,7 @@ class DocumentCardBuilder {
     );
   }
 
-  ///this async method shares the document to appropriate app on the playtform
+  ///this async method shares the document to appropriate app on the platform
   static void _shareDocument(
       BuildContext context, documents.Document document) async {
     Share.share(document.url.toString(),
@@ -156,7 +156,7 @@ class DocumentCardBuilder {
             AppLocalizations.of(context)!.dokumenti(document.documentName)));
   }
 
-  ///This async method opens the appropriate document.
+  ///This async method opens the appropriate document in the native window.
   ///
   static void _openDocument(documents.Document document) async {
     var pdfResponse = await http.get(document.url);

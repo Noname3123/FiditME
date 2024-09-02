@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/definedroles.dart' as defined_roles;
 
-///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian)
+///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian) to choose
 class RoleDialog extends StatefulWidget {
+  ///Constructor receives a list of passed functions from the root widget (MainPageFrame) and an additional bool param which defines whether the cancel button should be hidden
   const RoleDialog(
       {super.key,
       required this.passedFunctionList,

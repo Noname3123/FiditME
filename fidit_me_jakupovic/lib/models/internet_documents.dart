@@ -1,15 +1,15 @@
-///this class contains document metadata neccessarry for the app to generate document data
+///this class contains document metadata neccessarry for the app to generate document buttons with open and share functionality
 class Document {
   Document({required this.url, required this.documentName});
 
-  ///url of the document
+  ///uri of the document
   final Uri url;
 
-  ///Name of document (name matches )
+  ///Name of document. The name is unique for each document and written wihout white spaces. Localizer uses this name as a key to determine the actual localized name of the document to be displayed
   final String documentName;
 }
 
-///This var is a map which contains a list of all documents linked to semester number (key) for undergraduate studies
+///This var is a map which contains a list of all documents linked to semester number (key) for undergraduate studies. This var is of type Map<"String", List<Document>>
 var dinpPreddiplomskiStudiji = {
   "1": [
     Document(
@@ -41,7 +41,7 @@ var dinpPreddiplomskiStudiji = {
   ]
 };
 
-///This var is a map which contains a list of all documents linked to semester number (key) for graduate studies
+///This var is a map which contains a list of all documents linked to semester number (key) for graduate studies. This var is of type Map<"String", List<Document>>
 var dinpDiplomskiStudiji = {
   "1": [
     Document(
@@ -65,7 +65,7 @@ var dinpDiplomskiStudiji = {
   ]
 };
 
-///This var is of type Map<"String", List<Document>>
+///This var is of type Map<"String", List<Document>> and contains docs related for enrollment into graduate study programme
 var dokumentiUpisDiplomskiStudij = {
   "diplomskiStudij": [
     Document(
@@ -79,6 +79,7 @@ var dokumentiUpisDiplomskiStudij = {
   ]
 };
 
+///This var is of type Map<"String", List<Document>> and contains docs related for enrollment into udergraduate study programme
 var dokumentiUpisPredDiplomskiStudij = {
   "predDiplomskiStudij": [
     Document(
@@ -92,6 +93,7 @@ var dokumentiUpisPredDiplomskiStudij = {
   ]
 };
 
+///This var is of type Map<"String", List<Document>> and contains docs related for enrollment into senior years of studies
 var dokumentiUpisViseGodine = {
   "upisViseGodine": [
     Document(

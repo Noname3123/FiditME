@@ -8,9 +8,9 @@ import 'package:fidit_me_jakupovic/pages/settings.dart';
 import 'package:fidit_me_jakupovic/pages/studies.dart';
 import 'package:flutter/material.dart';
 
-/// This stateful widget is the main frame of the app. It contains the app drawer definition and tob bar definition. pages are added under the body of scaffholding
+/// This stateful widget is the main frame of the app. It contains the app drawer definition and top bar definition. Pages are added under the body of scaffholding
 class MainPageFrame extends StatefulWidget {
-  ///constructor of main page, which requuires title of app and a map of all functions which may be required to be passed on to widget children (subpages) and are called as events
+  ///constructor of main page, which requires title of app and a map of all functions which may be required to be passed on to widget children (subpages) and are called as events
   const MainPageFrame(
       {super.key, required this.title, required this.passedFunctionsList});
 
@@ -70,7 +70,7 @@ class MainPageState extends State<MainPageFrame> {
     );
   }
 
-  ///this method changes the current page. It is a void method. PageNum param is int and represents the index of page
+  ///this method changes the current page. It is a void method. PageNum param is int and represents the index of page to load
   void changePage(int pageNum) {
     setState(() {
       if (pageNum > 0 && pageNum < allPagesList.length) {

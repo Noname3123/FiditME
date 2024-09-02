@@ -5,6 +5,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 
+///This class represents the about page which displays all necessarry info about faculty
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
 

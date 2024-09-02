@@ -6,6 +6,7 @@ import 'package:fidit_me_jakupovic/models/definedlocales.dart'
 
 ///this class is a stateful widget -  a language dialog which gives the user a list of all langs (English + croatian)
 class LanguageDialog extends StatefulWidget {
+  ///Constructor requires a list of functions passed from root widget (MainPageFrame)
   const LanguageDialog({super.key, required this.passedFunctionList});
 
   final FunctionsList passedFunctionList;

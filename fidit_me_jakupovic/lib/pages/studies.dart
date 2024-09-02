@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fidit_me_jakupovic/models/internet_documents.dart' as documents;
 
+///This class represents the page containing documents related to Study programmes
 class StudiesPage extends StatelessWidget {
+  ///Constructor must receive the getRole method in order to adapt the page to the current role
   const StudiesPage({super.key, required this.getRole});
 
   final Function getRole;

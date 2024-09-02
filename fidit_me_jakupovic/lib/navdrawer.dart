@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-///this class inits the sidebar used for navigation.
+///this class is a stateless widget representing the sidebar used for navigation.
 class NavDrawer extends StatelessWidget {
-  ///constructor of this class receives the method  onPageChange which is called when app drawers onTap event is executed. getRole is a method which returns the active role of app
+  ///constructor of this class receives the method  onPageChange which is called when app drawers onTap event is executed. getRole is a passed method which returns the active role of app
   const NavDrawer(
       {super.key, required this.onPageChange, required this.getRole});
 
@@ -21,10 +21,11 @@ class NavDrawer extends StatelessWidget {
     );
   }
 
-  ///this method returns main app drawer elements and adds a padding arround them. the method must receive widgets buildCOntext as param
+  ///this method returns main app drawer elements as a Widget and adds a padding arround them. the method must receive widgets buildCOntext as param
   Widget buildDrawerElements(BuildContext context) {
     return Padding(
-      padding: MediaQuery.of(context).padding,
+      padding: MediaQuery.of(context)
+          .padding, //padding should be dependent on the device the app is running on
       child: Wrap(
         runSpacing: 9,
         children: [
@@ -67,7 +68,7 @@ class NavDrawer extends StatelessWidget {
     );
   }
 
-  ///this method receives the build context of widget and page index. It relads te appropriate page and closes the nav drawer
+  ///this method receives the build context of widget and page index (integer). It reloads te appropriate page and closes the nav drawer
   void rerouteAndCloseDrawer(BuildContext context, int pageNum) {
     onPageChange(pageNum);
     Navigator.of(context).pop(); //causes to close drawer on select

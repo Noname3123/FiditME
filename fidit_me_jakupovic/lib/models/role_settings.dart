@@ -1,4 +1,4 @@
-///this is a class of bool fields which define which parts of the app are available to user. Each role has appropriate RoleSettings associated with it
+///this is a class of bool fields that define which parts of the app are available to user. Each role has appropriate RoleSettings associated with it
 class RoleSettings {
   RoleSettings({
     required this.hideDinpPage,

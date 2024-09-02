@@ -3,6 +3,7 @@ import 'package:fidit_me_jakupovic/models/internet_documents.dart' as documents;
 import 'package:fidit_me_jakupovic/builder_classes/document_card_builder.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+///This class represents the page containing studies' subject implementation plans (document)
 class DinpsPage extends StatelessWidget {
   ///Constructor receives getRole method from parent widget. Method is used to change loaded content depending on permissions.
   const DinpsPage({super.key, required this.getRole});

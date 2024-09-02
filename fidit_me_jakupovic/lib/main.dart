@@ -8,7 +8,7 @@ import 'package:localstorage/localstorage.dart';
 import 'package:fidit_me_jakupovic/models/definedroles.dart' as defined_roles;
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized(); //necessarry for localstore DB
+  WidgetsFlutterBinding.ensureInitialized(); //necessarry for localstorage
   await initLocalStorage();
   runApp(MainApp());
 }
@@ -16,7 +16,6 @@ Future<void> main() async {
 class MainApp extends StatefulWidget {
   MainApp({super.key});
 
-  // This widget is the root of your application.
   //defined color scheme of app for light mode
   final ColorScheme colorSchemeLight =
       ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 23, 55, 83));
@@ -140,7 +139,7 @@ class MainAppState extends State<MainApp> {
     });
   }
 
-  ///getter for the current locale of the app. Return Locale object
+  ///getter for the current locale of the app. Returns Locale object
   Locale getLocale() {
     return currentLocale;
   }
@@ -159,7 +158,7 @@ class MainAppState extends State<MainApp> {
     });
   }
 
-  ///getter for the current role of the app. Returns RoleSettings object
+  ///getter for the current role of the app. Returns RoleSettings object which can be null
   RoleSettings? getRole() {
     return currentRole;
   }

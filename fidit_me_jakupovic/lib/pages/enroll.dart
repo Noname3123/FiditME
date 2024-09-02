@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fidit_me_jakupovic/models/internet_documents.dart' as documents;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+///This class represents the enroll page which contains documents related to enrolling to studies
 class EnrollPage extends StatelessWidget {
   ///This constructor requires the getRole method which is used to define which parts of page to make available
   const EnrollPage({super.key, required this.getRole});

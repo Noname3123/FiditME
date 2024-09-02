@@ -10,6 +10,7 @@ import 'package:fidit_me_jakupovic/models/role_to_localized_name_mapper.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+///Class represents a settings page which allows the user to edit app properties (dark mode, language and role)
 class SettingsPage extends StatefulWidget {
   ///this constructor requires a map of functions, which are passed from parent to child
   const SettingsPage({super.key, required this.passedFunctionsList});
